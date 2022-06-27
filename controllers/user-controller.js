@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Thought } = require('../models');
 
 const userController = {
 
@@ -50,7 +50,14 @@ const userController = {
 
     deleteUser({ params }, res) {
         User.findByIdAndDelete({ _id: params.id })
-            .then(dbUserData => res.json(dbUserData))
+            .then(dbUserData => {
+                if (!dbUserData) {
+                    res.status(404).json({ message: 'No user found with this id!' });
+                    return;
+                }
+                Thought.deleteMany({ username: dbUserData.username })
+                    .then(data => res.json(dbUserData))
+            })
             .catch(err => res.json(err));
     },
 
