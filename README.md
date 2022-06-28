@@ -18,7 +18,8 @@
   ## Contributing
   This project is not open to contribution.
 
-  
+  ## Walkthough
+  [Click Me For Video](https://drive.google.com/file/d/1Ny2nBiQUipJEj2lizlcoTQwVimmlkK9h/view)
 
   ## Questions?
   If you have any more questions for me, I can be reached from one of the links below. Thank you!
